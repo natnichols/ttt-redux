@@ -1,5 +1,4 @@
 /*------- Constants -------*/
-
 const winningCombos = [
   [0, 1, 2],
   [3, 4, 5],
@@ -21,7 +20,9 @@ const squareEls = document.querySelectorAll('.sqr')
 const messageEl = document.getElementById('message')
 
 /*------- Event Listeners -------*/
-
+squareEls.forEach(function(squareEl) {
+  squareEl.addEventListener('click', handleClick)
+})
 
 
 /*------- Functions -------*/
@@ -66,11 +67,13 @@ function updateMessage() {
   }
 }
 
+function handleClick(evt) {
+  const sqIdx = parseInt(evt.target.id.replace('sq', ''))
+  if (board[sqIdx] || winner) {
+    return
+  }
+}
 
-
-// Step 5 - Define the required constants
-
-  // 5a) In a constant called `winningCombos` define the eight possible winning combinations as an array of arrays.
 
 // Step 6 - Handle a player clicking a square with a `handleClick` function
 
