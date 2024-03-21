@@ -30,11 +30,14 @@ squareEls.forEach(function(squareEl) {
 init()
 
 function init() {
-  console.log(`Mulder, it's me`)
   board = [null, null, null, null, null, null, null, null, null]
   turn = 1
   winner = false
   tie = false
+  console.log(`turn = ${turn}`)
+  console.log(`winner = ${winner}`)
+  console.log(`tie = ${tie}`)
+  console.log(board)
   render()
 }
 
@@ -72,6 +75,12 @@ function handleClick(evt) {
   if (board[sqIdx] || winner) {
     return
   }
+  console.log(`Mulder you clicked`)
+  placePiece(sqIdx)
+}
+
+function placePiece(idx) {
+  board[idx] = turn
 }
 
 
