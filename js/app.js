@@ -77,29 +77,22 @@ function handleClick(evt) {
   }
   console.log(`Mulder you clicked`)
   placePiece(sqIdx)
+  checkForTie()
 }
 
 function placePiece(idx) {
   board[idx] = turn
+  console.log(board[idx])
 }
 
-
-// Step 6 - Handle a player clicking a square with a `handleClick` function
-
-  // 6a) Create a function called `handleClick`. It will have an `evt` parameter.
-
-  // 6b) Attach an event listener to the game board (you can do this to each one of the existing `squareEls` with a `forEach` loop OR add a new cached element reference that will allow you to take advantage of event bubbling). On the `'click'` event, it should call the `handleClick` function you created in 6a.
-
-  // 6c) Obtain the index of the square that was clicked by "extracting" the index from an `id` assigned to the target element in the HTML. Assign this to a constant called `sqIdx`.
-
-  // 6d) If the `board` has a value at the `sqIdx`, immediately `return` because that square is already taken. Also, if `winner` is `true` immediately `return` because the game is over.
-
-
-// Step 6.1 - `placePiece`
-
-  // 6.1a) Create a function named placePiece that accepts an `idx` parameter.
-
-  // 6.1b) Update the `board` array at the `idx` so that it is equal to the current value of `turn`.
+function checkForTie() {
+  if (board.includes(null)) {
+    return
+  } else {
+    console.log('Mulder, the tie fn is running')
+    tie = true
+  }
+}
 
 // 6.2 - `checkForTie`
 
