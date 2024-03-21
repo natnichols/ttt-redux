@@ -80,6 +80,7 @@ function handleClick(evt) {
   checkForTie()
   checkForWinner()
   switchPlayerTurn()
+  render()
 }
 
 function placePiece(idx) {
