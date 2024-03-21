@@ -78,6 +78,7 @@ function handleClick(evt) {
   console.log(`Mulder you clicked`)
   placePiece(sqIdx)
   checkForTie()
+  checkForWinner()
 }
 
 function placePiece(idx) {
@@ -94,11 +95,15 @@ function checkForTie() {
   }
 }
 
-// 6.2 - `checkForTie`
+function checkForWinner() {
+  winningCombos.forEach(combo => {
+    if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]]) === 3) {
+      console.log(`Mulder, there's a winner`)
+      winner = true
+    }
+  })
+}
 
-  // 6.2a) Create a function named `checkForTie`.
-
-  // 6.2b) Check if the `board` array still contains any `null` elements. If it does, we can leave `tie` as false. Otherwise, set `tie` to true.
 
 // 6.3 - `checkForWinner`
 
