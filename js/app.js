@@ -18,12 +18,13 @@ let board, turn, winner, tie
 /*------- Cached Element References -------*/
 const squareEls = document.querySelectorAll('.sqr')
 const messageEl = document.getElementById('message')
+const resetBtnEl = document.getElementById('reset')
 
 /*------- Event Listeners -------*/
 squareEls.forEach(function(squareEl) {
   squareEl.addEventListener('click', handleClick)
 })
-
+resetBtnEl.addEventListener('click', init)
 
 /*------- Functions -------*/
 
