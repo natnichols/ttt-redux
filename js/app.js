@@ -28,7 +28,8 @@ function init() {
 }
 
 function render() {
-  
+  updateBoard()
+  updateMessage()
 }
 
 function updateBoard() {
@@ -45,6 +46,15 @@ function updateBoard() {
   })
 }
 
+function updateMessage() {
+  if (!winner && !tie) {
+    messageEl.textContent = `It's ${turn === 1 ? 'X' : 'O'}'s turn!`
+  } else if (!winner && tie) {
+    messageEl.textContent = `It's a tie, which is technically called a Cat's game!`
+  } else {
+    messageEl.textContent = `Congratulations ${turn === 1 ? 'X' : 'O'}, you've won!`
+  }
+}
 
 
 // Step 4 - The state of the game should be rendered to the user
