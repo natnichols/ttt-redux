@@ -1,5 +1,10 @@
 body {
-    background-color: gray;
+  --body-bg: rgb(204, 123, 255);
+  --text-color: rgb(38, 1, 60);
+  --borders: 3px solid rgb(38, 1, 60);
+  --player-x-color: aqua;
+  --player-y-color: lime;
+  background-color: var(--body-bg);
 	/* Use a system font, if none are available use an available sans-sarif   font */
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -7,6 +12,9 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
 }
 
 section.board {
@@ -17,8 +25,11 @@ section.board {
 }
 
 div {
-  border: 3px solid black;
+  border: var(--borders);
+  border-radius: 6px;
   font-size: 8vmin;
-  text-align: center;
-  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1px;
 }
