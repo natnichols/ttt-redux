@@ -1,6 +1,8 @@
 body {
   --body-bg: rgb(204, 123, 255);
   --text-color: rgb(38, 1, 60);
+  --btn-borders: 3px solid rgb(229, 188, 255);
+  --reset-text-color: rgb(229, 188, 255);
   --borders: 3px solid rgb(38, 1, 60);
   --player-x-color: aqua;
   --player-y-color: lime;
@@ -33,4 +35,13 @@ div {
   align-items: center;
   margin: 1px;
   cursor: pointer;
+}
+
+button {
+  margin: 15px;
+  border-radius: 6px;
+  background-color: var(--text-color);
+  color: var(--reset-text-color);
+  /* border: var(--btn-borders); */
+  padding: 5px 15px 5px 15px;
 }
